@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Giphy
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Search a gift</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!-- Begin Searchbar -->
+  <ion-searchbar ([ngModel])="searchInput" (ionChange)="search($event)" (ionClear)="clear()" showCancelButton="focus" cancelButtonText="Cancel"></ion-searchbar>
+  <!-- End Searchbar -->
+
+  <div *ngIf="listItems.length > 0">
+    <ion-row>
+      <ion-col *ngFor="let item of listItems" size="4">
+        <img src="{{item.images.preview_gif.url}}" alt="{{item.title}}" (click)="selectedItem(item)">
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

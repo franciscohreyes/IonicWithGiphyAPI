@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="item">{{item.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="item">
+    <p class="">{{item.title}}</p>
+    <img src="{{item.images.preview_gif.url}}" alt="{{item.title}}">
+  </div>
+</ion-content>
